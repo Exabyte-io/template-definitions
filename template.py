@@ -12,6 +12,11 @@ params = [
     "PROJECT_DESCRIPTION",
 ]
 
+descriptions = [
+    "(Ex. made.js, code.js, ...)",
+    "(Ex. 'COre DEfinitions')",
+]
+
 readme = """\
 [![npm version](https://badge.fury.io/js/%40exabyte-io%2FPROJECT_NAME.svg)](https://badge.fury.io/js/%40exabyte-io%2FPROJECT_NAME)
 [![License: Apache](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
@@ -64,8 +69,8 @@ npm run test
 """
 
 values = {}
-for param in params:
-    values[param] = input(f"Please provide a value for {param}: ")
+for param, desc in zip(params, descriptions):
+    values[param] = input(f"Please provide a value for {param} {desc}: ")
 
 
 def replace(content, values):
